@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from cnab.serializers import CnabSerializer
 from .models import Cnab
 from rest_framework import generics
