@@ -1,19 +1,19 @@
 def read_file(filepath:str) -> list[dict]:
-    with open(filepath, 'r') as file:
+    with open(filepath, 'r',encoding="utf-8") as file:
       list_data=[]
-      Linhas= file.readlines()
-      for linha in Linhas:
-        tipo= linha[0]
-        date= linha[1:9]
-        valor= linha[9:19]
-        cpf= linha[19:30]
-        cartao= linha[30:42]
-        hora= linha[42:48]
-        dono= linha[48:62]
-        loja= linha[62:81]  
+      lines= file.readlines()
+      for line in lines:
+        tipo= line[0]
+        date= line[1:9]
+        valor= line[9:19]
+        cpf= line[19:30]
+        cartao= line[30:42]
+        hora= line[42:48]
+        dono= line[48:62]
+        loja= line[62:81]  
         valor_real = int(valor)*100
 
-        data_final= (tipo,date,valor_real,cpf, cartao, hora, dono, loja) 
-        list_data.append(data_final)
+        final_date= (tipo,date,valor_real,cpf, cartao, hora, dono, loja) 
+        list_data.append(final_date)
       return list_data
 
